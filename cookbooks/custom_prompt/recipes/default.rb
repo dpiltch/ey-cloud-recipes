@@ -5,6 +5,7 @@ template "/home/#{node[:owner_name]}/.bash_profile" do
   source "bash_profile.erb"
   variables({
     :role => node[:instance_role],
-    :instance_id => node[:engineyard][:this]
+    :instance_id => node[:engineyard][:this],
+    :environment => node[:engineyard][:environment][:name]
   })
 end
