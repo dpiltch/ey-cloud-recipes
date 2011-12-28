@@ -7,7 +7,7 @@ end
 # and will likely fail on clean instances if it's put first
 if node[:instance_role] == "util" && node[:name] == "loadbalancer"
   require_recipe 'loadbalancer::configure'
-  require_recipe 'loadbalancer::install' unless node[:quick]
+  require_recipe 'loadbalancer::install'
   require_recipe 'loadbalancer::ssl'
   require_recipe 'loadbalancer::stunnel'
 end
